@@ -304,9 +304,6 @@ export default function AdminPanel({ services, onServicesUpdated, onClose }: Adm
             <p className="text-xs text-stone-400 font-light">
               Por favor introduce la clave de acceso de Clara para administrar las reservas y tarjetas de servicios.
             </p>
-            <p className="text-[10px] text-stone-gold bg-stone-charcoal/5 border border-stone-gold/15 p-2.5 font-mono">
-              Clave de acceso: <span className="font-bold underline">ubuntu</span> (o tu variable ADMIN_PASSWORD si fue personalizada)
-            </p>
           </div>
 
           <form onSubmit={handleLoginSubmit} className="space-y-4">

@@ -43,7 +43,7 @@ async function startServer() {
 
   // Static token for session authentication
   const ADMIN_SESSION_TOKEN = 'clara_admin_session_token_2026';
-  const DEFAULT_PASS = 'ubuntu';
+  const DEFAULT_PASS = 'macata0378';
 
   // API Route: Admin login
   app.post('/api/admin/login', (req, res) => {
