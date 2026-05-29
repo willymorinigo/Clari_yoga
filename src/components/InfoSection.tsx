@@ -7,8 +7,8 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { CheckCircle2, Heart, Award, Sparkles, MapPin, Layers } from 'lucide-react';
 import { TEACHERS } from '../data';
-
-const shiatsuTherapyImg = '/src/assets/images/shiatsu_therapy_1780004600309.png';
+// @ts-expect-error - Vite handles asset bundling for png seamlessly at build time
+import shiatsuTherapyImg from '../assets/images/shiatsu_therapy_1780004600309.png';
 
 interface ChannelExplainer {
   name: string;

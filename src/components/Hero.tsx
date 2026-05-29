@@ -6,7 +6,7 @@
 import { motion } from 'motion/react';
 import { Calendar, ChevronRight, Activity, Smile, BookOpen } from 'lucide-react';
 
-const heroImage = 'https://instagram.feze7-1.fna.fbcdn.net/v/t51.82787-15/651196360_18084723140248895_3890060755378393577_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ig_cache_key=MzU0OTI3Nzc0MTE1NTg1NTg5MQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG95by5DMyJ9&_nc_ohc=kp_3eeq3w2gQ7kNvwH7cER5&_nc_oc=AdolMS9b2F61q7SjJOjeVNnE8_OPJIkmnETyMTKJn5j8zY4iAqDf1hJF8lkveqU8aYg&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.feze7-1.fna&_nc_gid=M7fDDIakT0U-ZMfwlTW5Fw&_nc_ss=7a22e&oh=00_Af62aElRF7osdNe84AMkE1wGrWG8Tnh0czD9brqE3FpQ9g&oe=6A1F4D3A';
+const heroImage = 'https://instagram.feze7-1.fna.fbcdn.net/v/t51.82787-15/539451475_18017374571765815_6756464134053541590_n.jpg?stp=dst-jpg_e15_tt6&_nc_cat=107&ig_cache_key=MzcxMDc4MDUxMzQ1NzE0NDAxMTE4MDE3Mzc0NTY1NzY1ODE1.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjIyNjguc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%3D%3D&_nc_ohc=sxmMkxV220kQ7kNvwEppAh1&_nc_oc=AdpFdNtbfc9x6mTVPWPj-BJuT13OmJiy0juFM3kC2VtAtCf9yxH9pUkDbc35G-Oh5t0&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.feze7-1.fna&_nc_gid=3g_QQS97ODX7wmCn1oTj2w&_nc_ss=7a22e&oh=00_Af6qd2l5oYIRwuoAJJfwkH6VUzBZs3vvJRqaDi4YuHPy6g&oe=6A1F525A';
 
 interface HeroProps {
   onStartBooking: () => void;
