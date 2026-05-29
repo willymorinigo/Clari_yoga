@@ -2,7 +2,6 @@ import 'dotenv/config';
 import express from 'express';
 import path from 'path';
 import fs from 'fs';
-import { createServer as createViteServer } from 'vite';
 import { SERVICES } from './src/data';
 
 async function startServer() {
@@ -97,15 +96,20 @@ async function startServer() {
     }
   });
 
-  // Vite middleware for development or fallback in production
-  if (process.env.NODE_ENV !== 'production') {
-    const vite = await createViteServer({
+  // Determine if running in production mode by checking NODE_ENV or dist/index.html presence
+  const distPath = path.join(process.cwd(), 'dist');
+  const isProduction = process.env.NODE_ENV === 'production' || fs.existsSync(path.join(distPath, 'index.html'));
+
+  if (!isProduction) {
+    console.log('Starting in DEVELOPMENT mode...');
+    const { createServer } = await import('vite');
+    const vite = await createServer({
       server: { middlewareMode: true },
       appType: 'spa',
     });
     app.use(vite.middlewares);
   } else {
-    const distPath = path.join(process.cwd(), 'dist');
+    console.log('Starting in PRODUCTION mode. Serving static files from dist/');
     app.use(express.static(distPath));
     app.get('*', (req, res) => {
       res.sendFile(path.join(distPath, 'index.html'));
