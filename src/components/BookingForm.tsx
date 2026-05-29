@@ -179,7 +179,7 @@ export default function BookingForm({
     if (!confirmedBooking || !selectedService) return '#';
     
     // WhatsApp number configured for Clara's studio
-    const whatsappPhone = '542215034442';
+    const whatsappPhone = '542215232417';
     
     // Using ultra-safe, highly compatible emojis to ensure they render perfectly everywhere
     const message = `¡Hola Clara! Acabo de registrar un turno desde la web y me gustaría confirmarlo:\n\n` +
