@@ -26,17 +26,33 @@ export default function App() {
   const [services, setServices] = useState<Service[]>(SERVICES);
   const [isAdminActive, setIsAdminActive] = useState<boolean>(false);
 
-  // Fetch updated services list from Express JSON backend on startup
+  // Fetch updated services list from Express JSON backend on startup with localStorage fallback
   useEffect(() => {
     const fetchServices = async () => {
+      // First, try loading from cache to avoid any delay
+      const cached = localStorage.getItem('clara_cached_services');
+      if (cached) {
+        try {
+          const parsed = JSON.parse(cached);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            setServices(parsed);
+          }
+        } catch (e) {
+          console.error('Error parsing cached services', e);
+        }
+      }
+
       try {
         const resp = await fetch('/api/services');
-        const data = await resp.json();
-        if (data.success && Array.isArray(data.services)) {
-          setServices(data.services);
+        if (resp.ok) {
+          const data = await resp.json();
+          if (data.success && Array.isArray(data.services)) {
+            setServices(data.services);
+            localStorage.setItem('clara_cached_services', JSON.stringify(data.services));
+          }
         }
       } catch (err) {
-        console.error('Error fetching services from backend. Using system defaults.', err);
+        console.warn('Error fetching services from backend. Using local cache / defaults.', err);
       }
     };
     fetchServices();
